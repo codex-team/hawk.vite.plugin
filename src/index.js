@@ -146,8 +146,17 @@ export default function hawkVitePlugin({
  */
 function getSourceMapsFileNames(bundlesInfo) {
   return Object.values(bundlesInfo)
-    .filter(item => item.type === 'asset' && item.fileName.endsWith('.map'))
-    .map(item => item.fileName);
+    .flatMap(item => {
+      if (item.type === 'asset' && item.fileName.endsWith('.map')) {
+        return [item.fileName];
+      }
+
+      if (item.type === 'chunk' && item.map) {
+        return [item.fileName + '.map'];
+      }
+
+      return [];
+    });
 }
 
 /**
