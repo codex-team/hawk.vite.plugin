@@ -1,11 +1,11 @@
 {
   "name": "@hawk.so/vite-plugin",
   "description": "Vite plugin for sending source-maps to the Hawk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "src/index.js",
   "repository": "https://github.com/codex-team/hawk.vite.plugin.git",
   "author": "CodeX <team@codex.so>",
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
   "type": "module",
   "types": "src/index.d.ts",
   "files": [
